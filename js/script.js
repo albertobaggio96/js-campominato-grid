@@ -10,7 +10,7 @@ button.addEventListener("click", function(){
   const mainElement= document.querySelector("main");
   
   const bigSquere= getNewDivElement();
-  bigSquere.classList.add("big-squere", "m-auto", "d-flex", "flex-wrap");
+  bigSquere.classList.add("big-squere", "m-auto", "d-flex", "flex-wrap", "p-0");
   
   mainElement.append(bigSquere);
   

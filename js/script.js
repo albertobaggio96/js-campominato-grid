@@ -16,15 +16,21 @@ function getSquere(){
     smallSquere.classList.add("small-squere", "d-flex", "justify-content-center", "align-items-center");
     bigSquere.append(smallSquere);
     smallSquere.append(i);
+
     smallSquere.addEventListener("click", function(){
-      smallSquere.classList.toggle("active")
+      smallSquere.classList.toggle("active");
     })
   }
 }
 
 const buttonPlay= document.getElementById("play");
+const buttonClean= document.getElementById("clean");
+
+buttonClean.disabled= true;
 
 buttonPlay.addEventListener("click", function(){
   getSquere()
   buttonPlay.disabled= true;
 })
+
+

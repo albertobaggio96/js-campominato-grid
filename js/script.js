@@ -3,34 +3,42 @@ function getNewDivElement(){
   return divElement;
 }
 
-function getSquere(){
+function getSquare(squareSize, tot){
   const mainElement= document.querySelector("main");
-  
-  const bigSquere= getNewDivElement();
-  bigSquere.classList.add("big-squere", "m-auto", "d-flex", "flex-wrap", "p-0");
-  
-  mainElement.append(bigSquere);
-  
-  for(let i = 1; i <= 100; i++){
-    let smallSquere= getNewDivElement();
-    smallSquere.classList.add("small-squere", "d-flex", "justify-content-center", "align-items-center");
-    bigSquere.append(smallSquere);
-    smallSquere.append(i);
 
-    smallSquere.addEventListener("click", function(){
-      smallSquere.classList.toggle("active");
+  mainElement.innerHTML=""
+  
+  const bigSquare= getNewDivElement();
+  bigSquare.classList.add("big-Square", "m-auto", "d-flex", "flex-wrap", "p-0");
+  
+  mainElement.append(bigSquare);
+  
+  for(let i = 1; i <= tot; i++){
+    let smallSquare= getNewDivElement();
+    smallSquare.classList.add("small-Square", "d-flex", "justify-content-center", "align-items-center", squareSize);
+    bigSquare.append(smallSquare);
+    smallSquare.append(i);
+
+    smallSquare.addEventListener("click", function(){
+      smallSquare.classList.toggle("active");
     })
   }
+  return mainElement
 }
 
-const buttonPlay= document.getElementById("play");
-const buttonClean= document.getElementById("clean");
+const buttonSmall= document.getElementById("small");
+const buttonMedium= document.getElementById("medium");
+const buttonBig= document.getElementById("big");
 
-buttonClean.disabled= true;
 
-buttonPlay.addEventListener("click", function(){
-  getSquere()
-  buttonPlay.disabled= true;
+buttonSmall.addEventListener("click", function(){
+  getSquare("forty-nine", 49)
 })
 
+buttonMedium.addEventListener("click", function(){
+  getSquare("eighty-one", 81)
+})
 
+buttonBig.addEventListener("click", function(){
+  getSquare("hundred", 100)
+})

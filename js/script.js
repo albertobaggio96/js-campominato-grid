@@ -3,10 +3,7 @@ function getNewDivElement(){
   return divElement;
 }
 
-const button= document.querySelector("button");
-
-button.addEventListener("click", function(){
-
+function getSquere(){
   const mainElement= document.querySelector("main");
   
   const bigSquere= getNewDivElement();
@@ -23,5 +20,11 @@ button.addEventListener("click", function(){
       smallSquere.classList.toggle("active")
     })
   }
-})
+}
 
+const buttonPlay= document.getElementById("play");
+
+buttonPlay.addEventListener("click", function(){
+  getSquere()
+  buttonPlay.disabled= true;
+})

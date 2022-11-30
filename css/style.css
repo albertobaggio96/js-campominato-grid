@@ -6,8 +6,12 @@ body{
   background-color: rgb(127,255,212);
 }
 
+header{
+  height: 100px;
+}
+
 header img{
-  width: 100px;
+  height: 100px;
 }
 
 main{
